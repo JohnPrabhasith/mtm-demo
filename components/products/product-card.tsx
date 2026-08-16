@@ -47,7 +47,7 @@ export function ProductCard({
             className="image-outline object-cover scale-100 opacity-0 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.05] group-hover:opacity-100"
             aria-hidden="true"
           />
-          <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-0 bg-primary px-3 py-3 text-center text-[0.68rem] font-semibold tracking-[0.2em] text-accent uppercase transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:translate-y-full md:group-hover:translate-y-0">
+          <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-0 bg-void/92 px-3 py-3 text-center text-[0.68rem] font-semibold tracking-[0.2em] text-gold uppercase transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] md:translate-y-full md:group-hover:translate-y-0">
             View look
           </span>
         </Link>
@@ -64,7 +64,7 @@ export function ProductCard({
           aria-pressed={saved}
           aria-label={saved ? "Remove from wishlist" : "Save to wishlist"}
           onClick={() => toggle(product)}
-          className="absolute top-3 right-3 bg-white/90"
+          className="absolute top-3 right-3 bg-void/80 text-ivory hover:bg-void"
         >
           <motion.span
             key={saved ? "saved" : "unsaved"}
@@ -76,7 +76,7 @@ export function ProductCard({
             <HeartIcon
               className={cn(
                 "transition-[fill,color] duration-200",
-                saved && "fill-primary text-primary",
+                saved && "fill-gold text-gold",
               )}
               data-icon="inline-start"
             />

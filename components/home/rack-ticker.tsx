@@ -1,7 +1,8 @@
 "use client";
 
 import { useRef } from "react";
-import { useInView, useReducedMotion } from "motion/react";
+import { useInView } from "motion/react";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 
 const labels = [
   "Shirts",
@@ -17,13 +18,13 @@ const labels = [
 export function RackTicker() {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { amount: 0.2 });
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
   const loop = [...labels, ...labels];
 
   return (
     <div
       ref={ref}
-      className="overflow-hidden border-y border-primary/15 bg-primary text-accent"
+      className="overflow-hidden border-y border-gold/25 bg-void text-gold"
     >
       <div
         className={reduce ? "flex w-max" : "flex w-max animate-marquee"}
@@ -32,7 +33,7 @@ export function RackTicker() {
         {loop.map((label, index) => (
           <p key={`${label}-${index}`} className="kicker flex items-center px-8 py-3">
             {label}
-            <span className="ml-8 inline-block h-3 w-px bg-white/25" aria-hidden="true" />
+            <span className="ml-8 inline-block size-1 rotate-45 bg-gold" aria-hidden="true" />
           </p>
         ))}
       </div>

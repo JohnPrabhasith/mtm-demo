@@ -41,12 +41,12 @@ export function ProductInfo({ product }: { product: Product }) {
   return (
     <div className="flex flex-col gap-6">
       <div>
-        <p className="kicker text-violet">
-          {product.category.replace("-", " ")}
-        </p>
-        <h1 className="yellow-stitch mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">
+        <h1 className="gold-rule font-heading text-3xl font-medium tracking-[-0.03em] sm:text-4xl">
           {product.name}
         </h1>
+        <p className="mt-2 text-sm text-muted-foreground">
+          {product.category.replace("-", " ")}
+        </p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <p className="text-2xl font-semibold tabular-nums">
             {formatInr(product.price)}

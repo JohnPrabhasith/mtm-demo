@@ -31,7 +31,7 @@ export default function StoresPage() {
         <ul className="mt-8 grid gap-5 lg:grid-cols-3">
           {stores.map((store) => (
             <li key={store.id} className="flex flex-col border bg-card p-6">
-              <Eyebrow className="text-violet">Demo store</Eyebrow>
+              <Eyebrow>Demo store</Eyebrow>
               <h2 className="mt-2 text-xl font-bold">{store.name}</h2>
               <p className="mt-4 flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPinIcon className="mt-0.5 size-4 shrink-0" aria-hidden="true" />

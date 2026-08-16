@@ -44,7 +44,7 @@ export default async function CollectionPage({
 
   return (
     <>
-      <section className="relative min-h-[42vh] overflow-hidden bg-primary text-white">
+      <section className="relative min-h-[42vh] overflow-hidden bg-void text-ivory">
         <div className="absolute inset-0">
           <Image
             src={collection.image}
@@ -55,12 +55,12 @@ export default async function CollectionPage({
             className="object-cover opacity-50"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/50 to-primary/20" />
+        <div className="absolute inset-0 bg-gradient-to-t from-void via-void/50 to-void/20" />
         <Container className="relative flex min-h-[42vh] flex-col justify-end pb-12 pt-24">
-          <h1 className="yellow-stitch max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl">
+          <h1 className="gold-rule max-w-3xl font-heading text-4xl font-medium tracking-[-0.03em] sm:text-6xl">
             {collection.name}
           </h1>
-          <p className="mt-4 max-w-xl text-white/75">{collection.description}</p>
+          <p className="mt-4 max-w-xl text-ivory/75">{collection.description}</p>
         </Container>
       </section>
       <Container className="page-y">

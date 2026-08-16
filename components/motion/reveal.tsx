@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
 const ease = [0.16, 1, 0.3, 1] as const;
@@ -14,7 +15,7 @@ export function Reveal({
   className?: string;
   delay?: number;
 }) {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
 
   if (reduce) {
     return <div className={className}>{children}</div>;
@@ -42,7 +43,7 @@ export function Stagger({
   className?: string;
   delay?: number;
 }) {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
 
   return (
     <motion.div
@@ -72,7 +73,7 @@ export function StaggerItem({
   children: React.ReactNode;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
 
   return (
     <motion.div

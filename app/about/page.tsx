@@ -33,7 +33,7 @@ export default function AboutPage() {
         </div>
         <div>
           <DemoNotice>brand story awaiting client confirmation</DemoNotice>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight">
+          <h2 className="mt-4 font-heading text-3xl font-medium tracking-[-0.03em]">
             Local roots. City ambition.
           </h2>
           <div className="mt-5 flex flex-col gap-4 text-muted-foreground">

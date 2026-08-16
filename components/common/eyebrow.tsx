@@ -10,7 +10,7 @@ export function Eyebrow({
   stitch?: boolean;
 }) {
   return (
-    <p className={cn("kicker", stitch && "yellow-stitch", className)}>
+    <p className={cn("kicker text-gold", stitch && "gold-rule", className)}>
       {children}
     </p>
   );

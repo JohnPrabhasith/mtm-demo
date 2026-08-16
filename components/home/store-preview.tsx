@@ -37,7 +37,7 @@ export function StorePreview() {
         {stores.map((store) => (
           <StaggerItem key={store.id}>
             <article className="border bg-card p-6">
-              <Eyebrow className="text-violet">Demo store</Eyebrow>
+              <Eyebrow>Demo store</Eyebrow>
               <h3 className="mt-2 text-lg font-bold">{store.name}</h3>
               <p className="mt-3 flex items-start gap-2 text-sm text-muted-foreground">
                 <MapPinIcon className="mt-0.5 size-4 shrink-0" aria-hidden="true" />

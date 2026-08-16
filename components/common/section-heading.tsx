@@ -23,9 +23,9 @@ export function SectionHeading({
     >
       <h2
         className={cn(
-          "font-heading text-3xl font-extrabold tracking-tight text-balance sm:text-4xl",
-          stitch && "yellow-stitch",
-          inverted ? "text-white" : "text-foreground",
+          "font-heading text-3xl font-medium tracking-[-0.03em] text-balance sm:text-4xl",
+          stitch && "gold-rule",
+          inverted ? "text-ivory" : "text-foreground",
           align === "center" && stitch && "inline-block text-left",
         )}
       >
@@ -35,7 +35,7 @@ export function SectionHeading({
         <p
           className={cn(
             "mt-3 max-w-xl text-sm leading-relaxed sm:text-base",
-            inverted ? "text-white/70" : "text-muted-foreground",
+            inverted ? "text-ivory/70" : "text-muted-foreground",
             align === "center" && "mx-auto",
           )}
         >

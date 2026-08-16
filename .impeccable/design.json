@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 2,
+  "colorMeta": {
+    "void": { "displayName": "Void black", "role": "page field" },
+    "ivory": { "displayName": "Ivory", "role": "type" },
+    "gold": { "displayName": "Foil gold", "role": "accent and action" },
+    "gold-bright": { "displayName": "Champagne", "role": "highlight" },
+    "gold-deep": { "displayName": "Bronze", "role": "foil shadow" },
+    "card": { "displayName": "Card ink", "role": "panel" },
+    "border": { "displayName": "Warm brass border", "role": "hairline" },
+    "muted": { "displayName": "Muted brass", "role": "secondary type" }
+  },
+  "typographyMeta": {
+    "display": { "displayName": "Bodoni display" },
+    "headline": { "displayName": "Bodoni section" },
+    "body": { "displayName": "Sora body" },
+    "label": { "displayName": "Sora tracked label" }
+  },
+  "extensions": {
+    "motion": {
+      "ease": "cubic-bezier(0.16, 1, 0.3, 1)",
+      "hero": "clip-path curtain plus word hem",
+      "reducedMotion": "loops off; first paint matches SSR"
+    },
+    "signature": "Official MTM logo plus gold hairline-and-diamond foil mark",
+    "antiReference": ["indigo #17104F", "purple #35228F", "yellow #FFD21C"]
+  }
+}

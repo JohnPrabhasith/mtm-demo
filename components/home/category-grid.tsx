@@ -29,7 +29,7 @@ export function CategoryGrid() {
             >
               <Link
                 href={category.href}
-                className="group relative isolate block min-h-56 overflow-hidden bg-primary text-white md:min-h-80"
+                className="group relative isolate block min-h-56 overflow-hidden bg-void text-ivory md:min-h-80"
               >
                 <Image
                   src={category.image}
@@ -38,9 +38,9 @@ export function CategoryGrid() {
                   sizes="(max-width: 768px) 50vw, 33vw"
                   className="image-outline object-cover opacity-80 transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.06]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/25 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
+                <div className="absolute inset-0 bg-gradient-to-t from-void via-void/30 to-transparent transition-opacity duration-300 group-hover:opacity-90" />
                 <div className="absolute inset-x-0 bottom-0 translate-y-2 p-4 transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-y-0 sm:p-6">
-                  <h3 className="text-xl font-extrabold tracking-tight sm:text-2xl">
+                  <h3 className="font-heading text-xl font-medium tracking-tight sm:text-2xl">
                     {category.name}
                   </h3>
                 </div>

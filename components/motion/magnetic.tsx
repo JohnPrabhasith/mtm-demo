@@ -1,6 +1,7 @@
 "use client";
 
-import { motion, useMotionValue, useReducedMotion, useSpring } from "motion/react";
+import { motion, useMotionValue, useSpring } from "motion/react";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { cn } from "@/lib/utils";
 
 export function Magnetic({
@@ -10,7 +11,7 @@ export function Magnetic({
   children: React.ReactNode;
   className?: string;
 }) {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
   const x = useMotionValue(0);
   const y = useMotionValue(0);
   const springX = useSpring(x, { stiffness: 280, damping: 20, mass: 0.35 });

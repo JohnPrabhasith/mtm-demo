@@ -2,8 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { motion, useInView, useReducedMotion } from "motion/react";
+import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
+import { FoilMark } from "@/components/common/foil-mark";
 import { Magnetic } from "@/components/motion/magnetic";
 import { Button } from "@/components/ui/button";
 import { images } from "@/data/images";
@@ -16,14 +18,14 @@ const words = [
 ];
 
 export function Hero() {
-  const reduce = useReducedMotion();
+  const reduce = usePrefersReducedMotion();
   const sectionRef = useRef<HTMLElement>(null);
   const inView = useInView(sectionRef, { amount: 0.35 });
 
   return (
     <section
       ref={sectionRef}
-      className="relative -mt-16 min-h-[88vh] overflow-hidden bg-primary text-primary-foreground lg:-mt-[4.5rem] lg:min-h-[94vh]"
+      className="relative -mt-[4.25rem] min-h-[88vh] overflow-hidden bg-void text-ivory lg:-mt-[4.75rem] lg:min-h-[94vh]"
     >
       <motion.div
         className="absolute inset-0"
@@ -45,20 +47,12 @@ export function Hero() {
             className="object-cover object-[center_20%] opacity-55 lg:opacity-100 lg:object-right"
           />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/88 to-primary/25 lg:via-primary/70 lg:to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-void via-void/88 to-void/25 lg:via-void/70 lg:to-transparent" />
       </motion.div>
 
-      <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1440px] flex-col justify-end px-5 pb-16 pt-28 sm:px-8 lg:min-h-[94vh] lg:justify-center lg:px-12 lg:pb-24">
+      <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1440px] flex-col justify-end px-6 pb-16 pt-28 sm:px-10 md:px-16 lg:min-h-[94vh] lg:justify-center lg:px-24 lg:pb-24 xl:px-32">
         <div className="max-w-xl">
-          <motion.p
-            className="max-w-sm text-sm text-accent sm:text-base"
-            initial={reduce ? false : { opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.45, ease }}
-          >
-            New season. New you.
-          </motion.p>
-          <h1 className="yellow-stitch mt-5 font-heading text-[2.7rem] leading-[0.92] font-extrabold tracking-tight text-balance sm:text-6xl lg:text-[5.4rem]">
+          <h1 className="gold-rule mt-5 font-heading text-[2.7rem] leading-[0.92] font-medium tracking-[-0.03em] text-balance sm:text-6xl lg:text-[5.4rem]">
             {words.map((line, lineIndex) => (
               <span key={line.join("-")} className="block overflow-hidden">
                 {line.map((word, wordIndex) => (
@@ -66,7 +60,7 @@ export function Hero() {
                     <motion.span
                       className={
                         word === "you."
-                          ? "inline-block text-accent"
+                          ? "inline-block text-gold"
                           : "inline-block"
                       }
                       initial={reduce ? false : { y: "110%" }}
@@ -85,8 +79,16 @@ export function Hero() {
               </span>
             ))}
           </h1>
+          <motion.div
+            className="mt-6"
+            initial={reduce ? false : { opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.5, delay: 0.78, ease }}
+          >
+            <FoilMark />
+          </motion.div>
           <motion.p
-            className="mt-6 max-w-md text-base leading-relaxed text-white/75 sm:text-lg"
+            className="mt-6 max-w-md text-base leading-relaxed text-ivory/75 sm:text-lg"
             initial={reduce ? false : { opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.85, ease }}
@@ -105,7 +107,6 @@ export function Hero() {
               <Button
                 variant="highlight"
                 size="xl"
-                className="button-shine"
                 render={<Link href="/men" />}
                 nativeButton={false}
               >

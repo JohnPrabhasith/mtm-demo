@@ -19,11 +19,11 @@ const buttonVariants = cva(
           "bg-destructive/10 text-destructive hover:bg-destructive/20 focus-visible:border-destructive/40 focus-visible:ring-destructive/20 dark:bg-destructive/20 dark:hover:bg-destructive/30 dark:focus-visible:ring-destructive/40",
         link: "text-primary underline-offset-4 hover:underline",
         highlight:
-          "button-shine bg-accent text-accent-foreground hover:bg-[color-mix(in_oklch,var(--accent),var(--foreground)_8%)]",
+          "button-shine gold-fill hover:brightness-110",
         invert:
           "bg-background text-foreground hover:bg-background/90",
         onDark:
-          "border-white/30 bg-transparent text-white hover:bg-white/10 hover:text-white",
+          "border-gold/55 bg-transparent text-gold-bright hover:bg-gold/10 hover:text-gold-bright",
       },
       size: {
         default:

@@ -48,7 +48,7 @@ export function ContactForm() {
         form.reset();
       }}
     >
-      <h2 className="text-xl font-bold">Write to the floor</h2>
+      <h2 className="font-heading text-xl font-medium tracking-[-0.02em]">Write to the floor</h2>
       <FieldGroup className="mt-6">
         <Field data-invalid={status === "error" || undefined}>
           <FieldLabel htmlFor="name">Name</FieldLabel>

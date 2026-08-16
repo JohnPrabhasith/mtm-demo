@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BrandMark } from "@/components/common/brand-mark";
 import { Container } from "@/components/common/container";
-import { Eyebrow } from "@/components/common/eyebrow";
+import { FoilMark } from "@/components/common/foil-mark";
 import { Button } from "@/components/ui/button";
 import { site } from "@/config/site";
 import { generateGeneralWhatsAppMessage, getWhatsAppUrl } from "@/lib/whatsapp";
@@ -18,24 +18,25 @@ const footerNav = [
 
 export function SiteFooter() {
   return (
-    <footer className="mt-auto bg-primary text-primary-foreground">
+    <footer className="mt-auto border-t border-gold/25 bg-void text-ivory">
       <Container className="grid gap-10 py-14 md:grid-cols-12">
         <div className="md:col-span-5">
-          <BrandMark inverted />
-          <p className="mt-5 max-w-sm text-sm leading-relaxed text-white/70">
+          <BrandMark />
+          <FoilMark className="mt-5" />
+          <p className="mt-5 max-w-sm text-sm leading-relaxed text-ivory/70">
             Local fashion with city energy. Shirts, denim, cargos, party wear,
             and kids looks — built for every mood.
           </p>
-          <p className="mt-4 text-xs text-white/40">
-            Temporary wordmark. Official logo to be supplied by the client.
-          </p>
         </div>
         <div className="md:col-span-3">
-          <Eyebrow className="text-accent">Shop</Eyebrow>
+          <p className="font-heading text-xl text-gold">Shop</p>
           <ul className="mt-4 flex flex-col gap-2 text-sm">
             {footerNav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="text-white/80 transition-colors duration-150 hover:text-white">
+                <Link
+                  href={item.href}
+                  className="text-ivory/80 transition-colors duration-150 hover:text-gold-bright"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -43,8 +44,8 @@ export function SiteFooter() {
           </ul>
         </div>
         <div className="md:col-span-4">
-          <Eyebrow className="text-accent">Talk to us</Eyebrow>
-          <ul className="mt-4 flex flex-col gap-2 text-sm text-white/80">
+          <p className="font-heading text-xl text-gold">Talk to us</p>
+          <ul className="mt-4 flex flex-col gap-2 text-sm text-ivory/80">
             <li>
               WhatsApp: {site.whatsapp.display}
               {site.whatsapp.isDemo ? " (demonstration number)" : null}
@@ -71,8 +72,8 @@ export function SiteFooter() {
           </Button>
         </div>
       </Container>
-      <div className="border-t border-white/10">
-        <Container className="flex flex-col gap-2 py-4 text-xs text-white/45 sm:flex-row sm:justify-between">
+      <div className="border-t border-gold/15">
+        <Container className="flex flex-col gap-2 py-4 text-xs text-ivory/45 sm:flex-row sm:justify-between">
           <p>© {new Date().getFullYear()} {site.name}. Preview storefront.</p>
           <p>Product photography is demonstration imagery, not official campaign work.</p>
         </Container>

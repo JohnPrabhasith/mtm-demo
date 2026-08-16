@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 export default function NotFound() {
   return (
     <div className="flex flex-1 flex-col items-center justify-center px-6 py-24 text-center">
-      <h1 className="yellow-stitch inline-block text-left text-4xl font-extrabold tracking-tight">
+      <h1 className="gold-rule inline-block text-left font-heading text-4xl font-medium tracking-[-0.03em]">
         That look isn&apos;t on the floor.
       </h1>
       <p className="mt-3 max-w-md text-muted-foreground">

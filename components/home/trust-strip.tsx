@@ -17,7 +17,7 @@ export function TrustStrip() {
         <ul className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
           {items.map((item) => (
             <li key={item.label} className="flex items-center gap-3">
-              <item.icon aria-hidden="true" className="size-4 text-violet" />
+              <item.icon aria-hidden="true" className="size-4 text-gold" />
               <span className="text-sm font-medium">{item.label}</span>
             </li>
           ))}

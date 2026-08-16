@@ -9,7 +9,7 @@ export function Section({
 }: {
   children: React.ReactNode;
   className?: string;
-  tone?: "canvas" | "card" | "indigo";
+  tone?: "canvas" | "card" | "ink";
   contained?: boolean;
 }) {
   const inner = contained ? <Container>{children}</Container> : children;
@@ -19,7 +19,7 @@ export function Section({
       className={cn(
         "section-y",
         tone === "card" && "bg-card",
-        tone === "indigo" && "bg-indigo text-indigo-foreground",
+        tone === "ink" && "bg-void text-ivory",
         className,
       )}
     >
