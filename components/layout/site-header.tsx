@@ -37,7 +37,11 @@ export function SiteHeader() {
       )}
     >
       <Container className="flex h-[4.25rem] flex-nowrap items-center gap-3 lg:h-[4.75rem]">
-        <Link href="/" className="shrink-0" aria-label={`${site.name} home`}>
+        <Link
+          href="/"
+          className="flex min-w-0 shrink-0 items-center"
+          aria-label={`${site.name} home`}
+        >
           <BrandMark />
         </Link>
         <nav aria-label="Primary" className="hidden flex-1 justify-center lg:flex">
