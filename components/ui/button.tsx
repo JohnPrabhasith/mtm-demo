@@ -23,7 +23,7 @@ const buttonVariants = cva(
         invert:
           "bg-background text-foreground hover:bg-background/90",
         onDark:
-          "border-gold/55 bg-transparent text-gold-bright hover:bg-gold/10 hover:text-gold-bright",
+          "border-gold/55 bg-transparent text-gold-bright fill-wipe",
       },
       size: {
         default:

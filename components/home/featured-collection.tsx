@@ -24,11 +24,19 @@ export function FeaturedCollection() {
   });
   const y = useTransform(scrollYProgress, [0, 1], reduce ? ["0%", "0%"] : ["-9%", "9%"]);
 
+  const glide = [0.83, 0, 0.17, 1] as const;
+
   return (
     <section ref={ref} className="bg-void text-ivory">
       <Container className="py-0">
         <div className="grid overflow-hidden lg:grid-cols-2">
-          <div className="relative min-h-[460px] overflow-hidden lg:min-h-[720px]">
+          <motion.div
+            className="relative min-h-[460px] overflow-hidden lg:min-h-[720px]"
+            initial={reduce ? false : { x: "-10%" }}
+            whileInView={{ x: "0%" }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.85, ease: glide }}
+          >
             <motion.div className="absolute inset-[-12%]" style={{ y }}>
               <Image
                 src={images.featured.street}
@@ -38,8 +46,17 @@ export function FeaturedCollection() {
                 className="object-cover"
               />
             </motion.div>
-          </div>
-          <div className="flex flex-col justify-center px-8 py-16 sm:px-12 lg:px-16">
+            <div className="pointer-events-none absolute top-8 left-8 rotate-[-12deg] border border-gold/70 px-3 py-1.5 font-heading text-lg tracking-[0.28em] text-gold/90">
+              MTM
+            </div>
+          </motion.div>
+          <motion.div
+            className="flex flex-col justify-center px-8 py-16 sm:px-12 lg:px-16"
+            initial={reduce ? false : { x: "8%" }}
+            whileInView={{ x: "0%" }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.85, delay: 0.08, ease: glide }}
+          >
             <h2 className="gold-rule font-heading text-4xl font-medium tracking-[-0.03em] sm:text-6xl">
               Street Style
             </h2>
@@ -60,7 +77,7 @@ export function FeaturedCollection() {
                 </Button>
               </Magnetic>
             </div>
-          </div>
+          </motion.div>
         </div>
       </Container>
     </section>

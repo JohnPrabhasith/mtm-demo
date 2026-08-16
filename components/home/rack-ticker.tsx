@@ -31,9 +31,12 @@ export function RackTicker() {
         style={{ animationPlayState: inView && !reduce ? "running" : "paused" }}
       >
         {loop.map((label, index) => (
-          <p key={`${label}-${index}`} className="kicker flex items-center px-8 py-3">
+          <p
+            key={`${label}-${index}`}
+            className="kicker flex items-center px-10 py-5 md:py-6"
+          >
             {label}
-            <span className="ml-8 inline-block size-1 rotate-45 bg-gold" aria-hidden="true" />
+            <span className="ml-10 inline-block size-1.5 rotate-45 bg-gold" aria-hidden="true" />
           </p>
         ))}
       </div>

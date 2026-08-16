@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { CategoryGrid } from "@/components/home/category-grid";
 import { CommunityStrip } from "@/components/home/community-strip";
 import { FeaturedCollection } from "@/components/home/featured-collection";
+import { GiantWord } from "@/components/home/giant-word";
 import { Hero } from "@/components/home/hero";
 import { NewArrivals } from "@/components/home/new-arrivals";
 import { PromoBanner } from "@/components/home/promo-banner";
@@ -24,6 +25,7 @@ export default function HomePage() {
       <TrustStrip />
       <CategoryGrid />
       <NewArrivals />
+      <GiantWord word="MACHA" />
       <FeaturedCollection />
       <PromoBanner />
       <TrendingProducts />

@@ -1,14 +1,13 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import { LookSlideshow } from "@/components/home/look-slideshow";
 import { usePrefersReducedMotion } from "@/components/motion/use-prefers-reduced-motion";
 import { FoilMark } from "@/components/common/foil-mark";
 import { Magnetic } from "@/components/motion/magnetic";
 import { Button } from "@/components/ui/button";
-import { images } from "@/data/images";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 
@@ -33,24 +32,10 @@ export function Hero() {
         animate={{ clipPath: "inset(0 0% 0 0%)" }}
         transition={{ duration: 1.15, ease }}
       >
-        <div
-          className="absolute inset-0 origin-center animate-ken-burns motion-reduce:animate-none"
-          style={{ animationPlayState: inView ? "running" : "paused" }}
-        >
-          <Image
-            src={images.hero.primary}
-            alt="Demonstration fashion photography of contemporary menswear"
-            fill
-            priority
-            fetchPriority="high"
-            sizes="100vw"
-            className="object-cover object-[center_20%] opacity-55 lg:opacity-100 lg:object-right"
-          />
-        </div>
-        <div className="absolute inset-0 bg-gradient-to-r from-void via-void/88 to-void/25 lg:via-void/70 lg:to-transparent" />
+        <LookSlideshow inView={inView} />
       </motion.div>
 
-      <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1440px] flex-col justify-end px-6 pb-16 pt-28 sm:px-10 md:px-16 lg:min-h-[94vh] lg:justify-center lg:px-24 lg:pb-24 xl:px-32">
+      <div className="relative mx-auto flex min-h-[88vh] w-full max-w-[1440px] flex-col justify-end px-6 pb-20 pt-28 sm:px-10 md:px-16 lg:min-h-[94vh] lg:justify-center lg:px-24 lg:pb-24 xl:px-32">
         <div className="max-w-xl">
           <h1 className="gold-rule mt-5 font-heading text-[2.7rem] leading-[0.92] font-medium tracking-[-0.03em] text-balance sm:text-6xl lg:text-[5.4rem]">
             {words.map((line, lineIndex) => (
