@@ -50,7 +50,7 @@ export function SiteFooter() {
               WhatsApp ({site.whatsapp.label}): {site.whatsapp.display}
             </li>
             <li>
-              {stores.length} branches — Wanaparthy to Kukatpally
+              {stores.length} branches across Telangana and Andhra
             </li>
             <li>
               <a
