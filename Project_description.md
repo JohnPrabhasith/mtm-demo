@@ -956,6 +956,7 @@ components/
     SectionHeading
     Container
     IconButton
+    etc
 ```
 
 This is guidance, not a rigid folder requirement.
