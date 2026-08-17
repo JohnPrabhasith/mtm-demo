@@ -10,9 +10,8 @@ const labels = [
   "Jeans",
   "Cargos",
   "Party Wear",
-  "Kids Wear",
-  "New Arrivals",
-  "Street Style",
+  "Walk in",
+  "WhatsApp",
 ];
 
 export function RackTicker() {

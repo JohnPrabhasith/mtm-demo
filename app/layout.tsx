@@ -22,7 +22,7 @@ const bodoni = Bodoni_Moda({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: `${site.name} | Trendy Fashion for Men & Kids`,
+    default: `${site.name} | Men's wear in Telangana & Andhra`,
     template: `%s | ${site.name}`,
   },
   description: site.description,
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     apple: "/brand/mtm-logo.png",
   },
   openGraph: {
-    title: `${site.name} | Trendy Fashion for Men & Kids`,
+    title: `${site.name} | Men's wear in Telangana & Andhra`,
     description: site.description,
     siteName: site.name,
     locale: "en_IN",
@@ -59,7 +59,7 @@ export default function RootLayout({
           THESIS: A Hyderabad boutique after dark — gold foil on black, not a purple fashion template.
           OWN-WORLD: Void black, metallic gold, ivory type; Bodoni Moda display with Sora body; official MTM lockup.
           STORY: Find a look, enquire on WhatsApp, visit the floor.
-          FIRST VIEWPORT: Logo top-left, photography cut from a slit, gold CTA to shop men.
+          FIRST VIEWPORT: Logo top-left, store looks from Instagram, gold CTA to find a store.
           FORM: Official-logo boutique; seed skipped — client-pinned gold/black lockup beats the roll.
           FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
         -->`,

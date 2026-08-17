@@ -11,7 +11,6 @@ import {
   products,
 } from "@/data/products";
 import { site } from "@/config/site";
-import { formatInr } from "@/lib/whatsapp";
 
 type Params = { slug: string };
 
@@ -31,7 +30,7 @@ export async function generateMetadata({
   }
   return {
     title: product.name,
-    description: `${product.name} — ${formatInr(product.price)}. ${product.description}`,
+    description: `${product.name}. Ask a Mana Trendz Macha branch for today's price and sizes.`,
     openGraph: {
       title: `${product.name} | ${site.name}`,
       description: product.description,

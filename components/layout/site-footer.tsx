@@ -4,14 +4,14 @@ import { Container } from "@/components/common/container";
 import { FoilMark } from "@/components/common/foil-mark";
 import { Button } from "@/components/ui/button";
 import { site } from "@/config/site";
+import { stores } from "@/data/stores";
 import { generateGeneralWhatsAppMessage, getWhatsAppUrl } from "@/lib/whatsapp";
 
 const footerNav = [
   { href: "/men", label: "Men" },
-  { href: "/kids", label: "Kids" },
-  { href: "/new-arrivals", label: "New Arrivals" },
-  { href: "/collections", label: "Collections" },
   { href: "/stores", label: "Stores" },
+  { href: "/new-arrivals", label: "Looks" },
+  { href: "/collections", label: "Collections" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
@@ -24,8 +24,8 @@ export function SiteFooter() {
           <BrandMark />
           <FoilMark className="mt-5" />
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-ivory/70">
-            Local fashion with city energy. Shirts, denim, cargos, party wear,
-            and kids looks — built for every mood.
+            Neighbourhood men&apos;s wear. Shirts, denim, cargos, and party
+            wear — try it on the floor.
           </p>
         </div>
         <div className="md:col-span-3">
@@ -47,13 +47,21 @@ export function SiteFooter() {
           <p className="font-heading text-xl text-gold">Talk to us</p>
           <ul className="mt-4 flex flex-col gap-2 text-sm text-ivory/80">
             <li>
-              WhatsApp: {site.whatsapp.display}
-              {site.whatsapp.isDemo ? " (demonstration number)" : null}
+              WhatsApp ({site.whatsapp.label}): {site.whatsapp.display}
             </li>
-            <li>Phone: {site.phone.display}</li>
-            <li>Email: {site.email.display}</li>
-            <li>Instagram: Coming soon</li>
-            <li>Facebook: Coming soon</li>
+            <li>
+              {stores.length} branches — Wanaparthy to Kukatpally
+            </li>
+            <li>
+              <a
+                href={site.social.instagram.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-ivory/80 transition-colors duration-150 hover:text-gold-bright"
+              >
+                Instagram: {site.social.instagram.handle}
+              </a>
+            </li>
           </ul>
           <Button
             className="mt-5"
@@ -74,8 +82,8 @@ export function SiteFooter() {
       </Container>
       <div className="border-t border-gold/15">
         <Container className="flex flex-col gap-2 py-4 text-xs text-ivory/45 sm:flex-row sm:justify-between">
-          <p>© {new Date().getFullYear()} {site.name}. Preview storefront.</p>
-          <p>Product photography is demonstration imagery, not official campaign work.</p>
+          <p>© {new Date().getFullYear()} {site.name}.</p>
+          <p>Price and size confirmed in store or on WhatsApp.</p>
         </Container>
       </div>
     </footer>

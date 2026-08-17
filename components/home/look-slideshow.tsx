@@ -9,28 +9,7 @@ import { cn } from "@/lib/utils";
 
 const ease = [0.83, 0, 0.17, 1] as const;
 
-const looks = [
-  {
-    src: images.hero.primary,
-    name: "City cut",
-    alt: "Demonstration fashion photography of contemporary menswear",
-  },
-  {
-    src: images.hero.secondary,
-    name: "Day layer",
-    alt: "Demonstration menswear photography in daylight",
-  },
-  {
-    src: images.featured.street,
-    name: "Street Style",
-    alt: "Demonstration street-style menswear photography",
-  },
-  {
-    src: images.featured.party,
-    name: "Party ready",
-    alt: "Demonstration party-wear photography",
-  },
-] as const;
+const looks = images.heroLooks;
 
 export function LookSlideshow({ inView }: { inView: boolean }) {
   const reduce = usePrefersReducedMotion();
@@ -95,13 +74,14 @@ export function LookSlideshow({ inView }: { inView: boolean }) {
               alt={look.alt}
               fill
               priority
+              quality={90}
               sizes="100vw"
-              className="object-cover object-[center_20%] opacity-55 lg:object-right lg:opacity-100"
+              className="object-cover object-[center_25%] opacity-80 lg:object-[center_30%] lg:opacity-100"
             />
           </div>
         </motion.div>
       </AnimatePresence>
-      <div className="absolute inset-0 bg-gradient-to-r from-void via-void/78 to-void/25 lg:via-void/48 lg:to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-void via-void/62 to-void/15 lg:via-void/38 lg:to-transparent" />
       <div className="pointer-events-none absolute top-[24%] right-[9%] hidden rotate-[-12deg] border border-gold/70 px-4 py-2 font-heading text-2xl tracking-[0.28em] text-gold/85 lg:block">
         MTM
       </div>

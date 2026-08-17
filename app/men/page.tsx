@@ -9,7 +9,7 @@ import { getProductsByAudience } from "@/data/products";
 export const metadata: Metadata = {
   title: "Men",
   description:
-    "Shop men's shirts, T-shirts, jeans, cargos and party wear at Mana Trendz Macha.",
+    "Men's shirts, T-shirts, jeans, cargos and party wear at Mana Trendz Macha. Ask the store for today's price.",
 };
 
 export default function MenPage() {
@@ -20,7 +20,7 @@ export default function MenPage() {
       <PageHero
         eyebrow="Men"
         title="The men's floor"
-        description="Shirts, tees, denim, cargos, and party wear. Demonstration catalogue — live stock can replace this data later."
+        description="Shirts, tees, denim, cargos, and party wear. Looks to browse — price and size confirmed in store or on WhatsApp."
       />
       <Container className="page-y">
         <Suspense fallback={<Skeleton className="h-96 w-full" />}>

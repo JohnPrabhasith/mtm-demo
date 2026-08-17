@@ -1,10 +1,8 @@
 "use client";
 
-import { useMemo } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { Slider } from "@/components/ui/slider";
 import {
   Select,
   SelectContent,
@@ -15,7 +13,6 @@ import {
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
 import { categories } from "@/data/categories";
-import { priceBounds } from "@/data/products";
 import { sortOptions, type SortKey } from "@/lib/catalog";
 import type { Audience } from "@/data/types";
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
@@ -35,8 +32,6 @@ export function ProductFilters({ audience }: { audience?: Audience }) {
       ? categories.filter((category) => category.audience === "kids")
       : categories.filter((category) => category.audience !== "kids");
 
-  const minPrice = Number(searchParams.get("minPrice") ?? priceBounds.min);
-  const maxPrice = Number(searchParams.get("maxPrice") ?? priceBounds.max);
   const sort = (searchParams.get("sort") as SortKey) || "newest";
   const sortItems = [
     { label: "Sort", value: null },
@@ -62,11 +57,6 @@ export function ProductFilters({ audience }: { audience?: Audience }) {
   const selectedCategory = searchParams.get("category") ?? "";
   const selectedSize = searchParams.get("size") ?? "";
   const query = searchParams.get("q") ?? "";
-
-  const priceLabel = useMemo(
-    () => `₹${minPrice.toLocaleString("en-IN")} – ₹${maxPrice.toLocaleString("en-IN")}`,
-    [minPrice, maxPrice],
-  );
 
   return (
     <div className="flex flex-col gap-8">
@@ -139,24 +129,6 @@ export function ProductFilters({ audience }: { audience?: Audience }) {
             </li>
           ))}
         </ul>
-      </div>
-
-      <div>
-        <Eyebrow className="mb-1">Price</Eyebrow>
-        <p className="mb-3 text-sm text-muted-foreground">{priceLabel}</p>
-        <Slider
-          min={priceBounds.min}
-          max={priceBounds.max}
-          step={50}
-          value={[minPrice, maxPrice]}
-          onValueChange={(value) => {
-            const range = value as number[];
-            patch({
-              minPrice: String(range[0]),
-              maxPrice: String(range[1]),
-            });
-          }}
-        />
       </div>
 
       <div>

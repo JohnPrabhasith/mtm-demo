@@ -23,7 +23,6 @@ import {
 } from "@/components/ui/empty";
 import { products } from "@/data/products";
 import { searchProducts } from "@/lib/catalog";
-import { formatInr } from "@/lib/whatsapp";
 
 export function SearchDialog({ inverted = false }: { inverted?: boolean }) {
   const router = useRouter();
@@ -68,7 +67,7 @@ export function SearchDialog({ inverted = false }: { inverted?: boolean }) {
         <DialogHeader>
           <DialogTitle>Search the floor</DialogTitle>
           <DialogDescription>
-            Find shirts, tees, denim, cargos, and kids wear.
+            Find shirts, tees, denim, cargos, and party wear.
           </DialogDescription>
         </DialogHeader>
         <search>
@@ -99,7 +98,7 @@ export function SearchDialog({ inverted = false }: { inverted?: boolean }) {
             <EmptyHeader>
               <EmptyTitle>No matches</EmptyTitle>
               <EmptyDescription>
-                Try a category like shirts, jeans, or kids.
+                Try a category like shirts or jeans.
               </EmptyDescription>
             </EmptyHeader>
           </Empty>
@@ -127,7 +126,7 @@ export function SearchDialog({ inverted = false }: { inverted?: boolean }) {
                       {product.name}
                     </span>
                     <span className="text-xs text-muted-foreground">
-                      {product.category.replace("-", " ")} · {formatInr(product.price)}
+                      {product.category.replace("-", " ")}
                     </span>
                   </span>
                 </Link>

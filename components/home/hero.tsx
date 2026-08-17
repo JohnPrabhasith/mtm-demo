@@ -78,9 +78,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.85, ease }}
           >
-            Premium fits. Latest trends.
-            <br />
-            Made for every mood.
+            Men&apos;s wear from the floor. WhatsApp a branch or walk in.
           </motion.p>
           <motion.div
             className="mt-8 flex flex-col gap-3 sm:flex-row"
@@ -92,20 +90,20 @@ export function Hero() {
               <Button
                 variant="highlight"
                 size="xl"
-                render={<Link href="/men" />}
+                render={<Link href="/stores" />}
                 nativeButton={false}
               >
-                Shop men
+                Find a store
               </Button>
             </Magnetic>
             <Magnetic>
               <Button
                 variant="onDark"
                 size="xl"
-                render={<Link href="/kids" />}
+                render={<Link href="/men" />}
                 nativeButton={false}
               >
-                Shop kids
+                Browse looks
               </Button>
             </Magnetic>
           </motion.div>

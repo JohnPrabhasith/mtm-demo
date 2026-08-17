@@ -134,13 +134,14 @@ Tailored, almost sharp: 2px default radius. Foil mark is a hairline interrupted 
 
 - Put the official logo top-left on black
 - Keep WhatsApp as the primary conversion
-- Label demonstration inventory, stores, and the WhatsApp number
+- Use the official Instagram `@mana_trendz_macha` for live store details
+- Label demonstration inventory, store addresses, and the WhatsApp number
 - Pair Bodoni headings with Sora UI
 
 **Don't**
 
 - Reintroduce indigo, purple, or brand yellow `#FFD21C`
 - Replace the logo with a CSS wordmark
-- Invent founder names, awards, store counts, or live social URLs
+- Invent founder names, awards, store counts, or social URLs that are not confirmed
 - Add checkout, UPI, or accounts
 - Stack a kicker above a heading

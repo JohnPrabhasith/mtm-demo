@@ -1,4 +1,5 @@
 import { images } from "@/data/images";
+import { instagramPosts } from "@/data/instagram";
 import type { Category } from "@/data/types";
 
 export const categories: Category[] = [
@@ -7,7 +8,7 @@ export const categories: Category[] = [
     name: "Shirts",
     href: "/men?category=shirts",
     audience: "men",
-    image: images.categories.shirts,
+    image: instagramPosts[0].src,
     description: "Textures, stripes, and everyday collars.",
   },
   {
@@ -15,7 +16,7 @@ export const categories: Category[] = [
     name: "T-Shirts",
     href: "/men?category=t-shirts",
     audience: "men",
-    image: images.categories.tees,
+    image: instagramPosts[4].src,
     description: "Oversized graphics and clean essentials.",
   },
   {
@@ -23,7 +24,7 @@ export const categories: Category[] = [
     name: "Jeans",
     href: "/men?category=jeans",
     audience: "men",
-    image: images.categories.jeans,
+    image: instagramPosts[2].src,
     description: "Washes built for daily wear.",
   },
   {
@@ -31,7 +32,7 @@ export const categories: Category[] = [
     name: "Cargos",
     href: "/men?category=cargos",
     audience: "men",
-    image: images.categories.cargos,
+    image: instagramPosts[1].src,
     description: "Utility fits with street ease.",
   },
   {
@@ -39,7 +40,7 @@ export const categories: Category[] = [
     name: "Party Wear",
     href: "/men?category=party-wear",
     audience: "men",
-    image: images.categories.party,
+    image: instagramPosts[3].src,
     description: "Night-ready shirts and sharper cuts.",
   },
   {

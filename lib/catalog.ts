@@ -1,13 +1,11 @@
 import type { Audience, Product } from "@/data/types";
 
-export type SortKey = "newest" | "price-asc" | "price-desc" | "name";
+export type SortKey = "newest" | "name";
 
 export type CatalogQuery = {
   q?: string;
   category?: string;
   size?: string;
-  minPrice?: number;
-  maxPrice?: number;
   sort?: SortKey;
   audience?: Audience;
 };
@@ -38,12 +36,6 @@ export function filterProducts(products: Product[], query: CatalogQuery) {
     if (query.size && !product.sizes.includes(query.size)) {
       return false;
     }
-    if (query.minPrice !== undefined && product.price < query.minPrice) {
-      return false;
-    }
-    if (query.maxPrice !== undefined && product.price > query.maxPrice) {
-      return false;
-    }
     if (query.q && !matchesQuery(product, query.q)) {
       return false;
     }
@@ -52,12 +44,6 @@ export function filterProducts(products: Product[], query: CatalogQuery) {
 
   const sorted = [...filtered];
   switch (query.sort) {
-    case "price-asc":
-      sorted.sort((a, b) => a.price - b.price);
-      break;
-    case "price-desc":
-      sorted.sort((a, b) => b.price - a.price);
-      break;
     case "name":
       sorted.sort((a, b) => a.name.localeCompare(b.name));
       break;
@@ -77,7 +63,5 @@ export function searchProducts(products: Product[], q: string) {
 
 export const sortOptions: { value: SortKey; label: string }[] = [
   { value: "newest", label: "Newest" },
-  { value: "price-asc", label: "Price: Low to high" },
-  { value: "price-desc", label: "Price: High to low" },
   { value: "name", label: "Name" },
 ];

@@ -19,6 +19,28 @@ export const images = {
     primary: photo("photo-1488161628813-04466f872be2", { w: 1600, h: 2000 }),
     secondary: photo("photo-1492446845049-9c50cc313f00", { w: 900, h: 1200 }),
   },
+  heroLooks: [
+    {
+      src: photo("photo-1516257984-b1b4d707412e", { w: 2000, h: 2400, q: 90 }),
+      name: "Printed shirt",
+      alt: "Sharp menswear look — printed shirt with denim",
+    },
+    {
+      src: photo("photo-1617137968427-85924c800a22", { w: 2000, h: 2400, q: 90 }),
+      name: "Night cut",
+      alt: "Sharp menswear look — navy suit walking",
+    },
+    {
+      src: photo("photo-1487222477894-8943e31ef7b2", { w: 2000, h: 2400, q: 90 }),
+      name: "Street gold",
+      alt: "Sharp menswear look — leather jacket and gold frames",
+    },
+    {
+      src: photo("photo-1492562080023-ab3db95bfbce", { w: 2000, h: 2400, q: 90 }),
+      name: "Day layer",
+      alt: "Sharp menswear look — bomber jacket in warm light",
+    },
+  ],
   featured: {
     street: photo("photo-1516826957135-700dedea698c", { w: 1400, h: 1800 }),
     party: photo("photo-1617127365659-c47fa864d8bc", { w: 1400, h: 1800 }),

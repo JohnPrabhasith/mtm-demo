@@ -6,7 +6,7 @@ import { CollectionsGrid } from "@/components/collections/collections-grid";
 export const metadata: Metadata = {
   title: "Collections",
   description:
-    "Editorial edits from Mana Trendz Macha — street, denim, party, everyday, and kids.",
+    "Edits from Mana Trendz Macha — street, denim, party, and everyday.",
 };
 
 export default function CollectionsPage() {
@@ -15,7 +15,7 @@ export default function CollectionsPage() {
       <PageHero
         eyebrow="Edits"
         title="Collections"
-        description="Visual rooms, not just another grid. Each edit is a point of view."
+        description="Rooms from the floor. Confirm price and size in store."
         dark
       />
       <Container className="page-y">

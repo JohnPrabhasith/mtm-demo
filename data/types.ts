@@ -41,12 +41,12 @@ export type Collection = {
 
 export type Store = {
   id: string;
-  name: string;
-  isDemo: true;
-  address: string;
   city: string;
-  phoneDisplay: string;
-  phoneHref: string;
-  hours: string;
-  mapsQuery: string;
+  state: "Telangana" | "Andhra Pradesh";
+  address: string;
+  /** 10-digit Indian mobile from the Instagram bio, or null if only a map was listed. */
+  phoneDigits: string | null;
+  phoneDisplay: string | null;
+  phoneE164: string | null;
+  mapsUrl: string | null;
 };

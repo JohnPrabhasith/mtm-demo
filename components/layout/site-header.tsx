@@ -3,12 +3,11 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { InstagramGlyph } from "@/components/common/instagram-glyph";
 import { BrandMark } from "@/components/common/brand-mark";
 import { Container } from "@/components/common/container";
-import { BagSheet } from "@/components/layout/bag-sheet";
 import { MobileNav } from "@/components/layout/mobile-nav";
 import { SearchDialog } from "@/components/layout/search-dialog";
-import { WishlistSheet } from "@/components/layout/wishlist-sheet";
 import { Button } from "@/components/ui/button";
 import { site } from "@/config/site";
 import { generateGeneralWhatsAppMessage, getWhatsAppUrl } from "@/lib/whatsapp";
@@ -70,8 +69,22 @@ export function SiteHeader() {
         </nav>
         <div className="ml-auto flex shrink-0 items-center gap-0.5 text-gold-bright">
           <SearchDialog />
-          <WishlistSheet />
-          <BagSheet />
+          <Button
+            variant="ghost"
+            size="icon"
+            className="text-gold-bright hover:bg-gold/10 hover:text-gold-bright"
+            aria-label={`Instagram ${site.social.instagram.handle}`}
+            render={
+              <a
+                href={site.social.instagram.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
+            nativeButton={false}
+          >
+            <InstagramGlyph />
+          </Button>
           <Button
             variant="highlight"
             size="sm"

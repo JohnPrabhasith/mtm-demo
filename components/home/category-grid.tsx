@@ -9,17 +9,19 @@ import { categories } from "@/data/categories";
 import { cn } from "@/lib/utils";
 
 export function CategoryGrid() {
+  const rooms = categories.filter((category) => category.audience === "men");
+
   return (
     <Section>
       <Reveal>
         <SectionHeading
-          title="Shop by category"
-          description="Photography-led rooms. Pick a lane and walk it."
+          title="On the racks"
+          description="Looks from the floor. Price confirmed when you walk in or WhatsApp."
         />
       </Reveal>
       <Stagger className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-6 md:gap-4">
-        {categories.map((category, index) => {
-          const featured = index === 0 || index === 5;
+        {rooms.map((category, index) => {
+          const featured = index === 0 || index === rooms.length - 1;
           return (
             <StaggerItem
               key={category.slug}

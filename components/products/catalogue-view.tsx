@@ -21,7 +21,6 @@ import {
   EmptyTitle,
 } from "@/components/ui/empty";
 import { filterProducts, type SortKey } from "@/lib/catalog";
-import { priceBounds } from "@/data/products";
 import type { Audience, Product } from "@/data/types";
 
 export function CatalogueView({
@@ -40,12 +39,6 @@ export function CatalogueView({
       q: searchParams.get("q") ?? undefined,
       category: searchParams.get("category") ?? undefined,
       size: searchParams.get("size") ?? undefined,
-      minPrice: searchParams.get("minPrice")
-        ? Number(searchParams.get("minPrice"))
-        : priceBounds.min,
-      maxPrice: searchParams.get("maxPrice")
-        ? Number(searchParams.get("maxPrice"))
-        : priceBounds.max,
       sort: (searchParams.get("sort") as SortKey) || "newest",
     });
   }, [audience, products, searchParams]);
@@ -73,7 +66,7 @@ export function CatalogueView({
               <SheetHeader>
                 <SheetTitle>Filters</SheetTitle>
                 <SheetDescription>
-                  Refine the floor by category, size, and price.
+                  Refine by category and size.
                 </SheetDescription>
               </SheetHeader>
               <div className="overflow-y-auto px-4 pb-8">
@@ -87,7 +80,7 @@ export function CatalogueView({
             <EmptyHeader>
               <EmptyTitle>No pieces in this filter</EmptyTitle>
               <EmptyDescription>
-                Clear a size or price range to see more of the floor.
+                Clear a size or category to see more of the floor.
               </EmptyDescription>
             </EmptyHeader>
           </Empty>

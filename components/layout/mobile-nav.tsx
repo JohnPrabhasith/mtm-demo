@@ -44,7 +44,7 @@ export function MobileNav() {
             <BrandMark />
           </SheetTitle>
           <SheetDescription className="text-ivory/60">
-            Shop the floor
+            Find a look. WhatsApp a branch.
           </SheetDescription>
         </SheetHeader>
         <nav aria-label="Mobile" className="flex flex-1 flex-col px-4">
@@ -77,19 +77,6 @@ export function MobileNav() {
                 </li>
               );
             })}
-            <li>
-              <SheetClose
-                render={
-                  <Link
-                    href="/stores"
-                    className="block py-3 font-heading text-3xl tracking-tight text-ivory"
-                  />
-                }
-                nativeButton={false}
-              >
-                Stores
-              </SheetClose>
-            </li>
           </ul>
           <div className="mt-auto flex flex-col gap-3 py-6">
             <Button
@@ -105,6 +92,20 @@ export function MobileNav() {
               nativeButton={false}
             >
               WhatsApp
+            </Button>
+            <Button
+              variant="onDark"
+              size="xl"
+              render={
+                <a
+                  href={site.social.instagram.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
+              nativeButton={false}
+            >
+              Instagram
             </Button>
           </div>
         </nav>

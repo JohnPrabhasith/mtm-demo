@@ -8,7 +8,7 @@ import { getProductsByAudience } from "@/data/products";
 
 export const metadata: Metadata = {
   title: "Kids",
-  description: "Shop kids wear at Mana Trendz Macha. Demonstration catalogue.",
+  description: "Kids wear at Mana Trendz Macha — confirm stock at the branch.",
 };
 
 export default function KidsPage() {
@@ -19,7 +19,7 @@ export default function KidsPage() {
       <PageHero
         eyebrow="Kids"
         title="Little trendz"
-        description="Mini fits with the same energy as the men's floor. Demonstration products only."
+        description="Mini fits if the floor has them. Confirm stock and price at the branch."
       />
       <Container className="page-y">
         <Suspense fallback={<Skeleton className="h-96 w-full" />}>

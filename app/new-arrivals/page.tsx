@@ -7,8 +7,8 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { getNewArrivals } from "@/data/products";
 
 export const metadata: Metadata = {
-  title: "New Arrivals",
-  description: "New arrivals from Mana Trendz Macha. Demonstration products.",
+  title: "Looks",
+  description: "New looks from Mana Trendz Macha. Ask the store for today's price.",
 };
 
 export default function NewArrivalsPage() {
@@ -18,8 +18,8 @@ export default function NewArrivalsPage() {
     <>
       <PageHero
         eyebrow="Just in"
-        title="New arrivals"
-        description="The newest demonstration pieces on the floor."
+        title="Looks"
+        description="Pieces to browse. Price and size confirmed in store or on WhatsApp."
         dark
       />
       <Container className="page-y">

@@ -1,42 +1,49 @@
+import { defaultStore } from "@/data/stores";
+
 export const site = {
   name: "Mana Trendz Macha",
   shortName: "MTM",
   tagline: "Style that speaks you.",
   description:
-    "Discover trendy men's and kids' fashion at Mana Trendz Macha. Explore shirts, T-shirts, jeans, casualwear, partywear and the latest arrivals.",
+    "Men's wear from Mana Trendz Macha. Walk into a branch or WhatsApp the floor — shirts, tees, denim, cargos, and party wear.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   locale: "en-IN",
   currency: "INR",
-  defaultLocation: "Hyderabad",
+  defaultLocation: "Kukatpally, Hyderabad",
   phone: {
-    display: "Client information required",
-    href: null as string | null,
+    display: defaultStore.phoneDisplay!,
+    href: `tel:+${defaultStore.phoneE164}`,
   },
   email: {
-    display: "Client information required",
+    display: null as string | null,
     href: null as string | null,
   },
   whatsapp: {
-    e164: process.env.NEXT_PUBLIC_WHATSAPP_E164 ?? "919000000000",
-    display: "+91 90000 00000",
-    isDemo: true,
-    label: "Demonstration number",
+    e164:
+      process.env.NEXT_PUBLIC_WHATSAPP_E164 &&
+      process.env.NEXT_PUBLIC_WHATSAPP_E164 !== "919000000000"
+        ? process.env.NEXT_PUBLIC_WHATSAPP_E164
+        : defaultStore.phoneE164!,
+    display: defaultStore.phoneDisplay!,
+    isDemo: false,
+    label: "Kukatpally",
   },
   social: {
-    instagram: null as string | null,
+    instagram: {
+      href: "https://www.instagram.com/mana_trendz_macha/",
+      handle: "@mana_trendz_macha",
+    },
     facebook: null as string | null,
   },
   hours: {
-    display: "Client information required",
-    note: "Ask the store for confirmed opening hours.",
+    display: "Ask the branch",
+    note: "Opening hours are not listed on Instagram. Call or message the store before you visit.",
   },
   navigation: [
     { href: "/", label: "Home" },
     { href: "/men", label: "Men" },
-    { href: "/kids", label: "Kids" },
-    { href: "/new-arrivals", label: "New Arrivals" },
-    { href: "/collections", label: "Collections" },
-    { href: "/about", label: "About" },
+    { href: "/stores", label: "Stores" },
+    { href: "/new-arrivals", label: "Looks" },
     { href: "/contact", label: "Contact" },
   ],
 } as const;
